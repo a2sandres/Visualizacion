@@ -79,14 +79,18 @@ plt.xticks(rotation = 70);
 
 #%%
 #stripplot
+'''
 plt.figure(figsize=(15,10))
 sns.stripplot(x='Recip_State',y='Series_Complete_Yes', data=df, hue='MMWR_week')
 plt.xticks(rotation = -45);
+'''
 
 #%%
 #correlacion pairplot
-df1= df[1000:2000]
+'''
+df1= df[100:200]
 sns.pairplot(df1)
+'''
 
 #%%
 #Grafica comportamiento frente a tiempo barras, lineas, colores y grids
@@ -142,6 +146,7 @@ plt.xticks(rotation = -60);
 
 #%%
 #Datos en un mapa
+'''
 df3=df.groupby(["Recip_State"])[["Series_Complete_Yes"]].sum()
 df3["Recip_State"]= df3.index
 
@@ -158,3 +163,4 @@ data = dict(type = "choropleth",
 layout = dict(title= "Vacunas Covid 19 USA 2022", geo = {"scope":"usa"})
 choromap = go.Figure(data= [data], layout= layout)
 choromap.show()
+'''
