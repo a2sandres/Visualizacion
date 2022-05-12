@@ -16,15 +16,15 @@ los sitios asociados de la Agencia Federal para el Manejo de Emergencias y la Ad
 """
 
 import matplotlib.pyplot as plt
-import numpy as np
+#import numpy as np
 import pandas  as pd
 from datetime import datetime, timedelta
-import warnings
+#import warnings
 import seaborn as sns
-import plotly as py
-from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
-import plotly.graph_objs as go
-import plotly.express as px #libreria para vizualización
+#import plotly as py
+#from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+#import plotly.graph_objs as go
+#import plotly.express as px #libreria para vizualización
 
 #%%%
 db = 'https://media.githubusercontent.com/media/a2sandres/Visualizacion/main/muestra.csv'
