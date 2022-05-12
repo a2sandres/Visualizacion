@@ -32,7 +32,7 @@ db = 'https://media.githubusercontent.com/media/a2sandres/Visualizacion/main/mue
 #d_parse = lambda x : datetime.strptime(x, "%m/%d/%Y")
 d_parse = lambda x : datetime.strptime(x, "%Y-%m-%d")
 df = pd.read_csv(db, parse_dates=["Date"], date_parser = d_parse)  #  Leer y guardar el archivo el daataframe row_data
-print(df.head())
+#print(df.head())
 #%%
 '''
 df1 = df.sample(n=1000)
@@ -56,9 +56,10 @@ df['Completeness_pct']=pd.to_numeric(df['Completeness_pct'], downcast='float', e
 
 #%%
 #(df.describe(include = 'all'))
+'''
 print(df.info())
 print(df.describe())
-
+'''
 #%%
 #Agrupar Datos
 dfg=sns.PairGrid(df, hue="Recip_State", x_vars=['Series_Complete_Pop_Pct', 'Series_Complete_Yes'], y_vars=['Series_Complete_12PlusPop_Pct', 'Series_Complete_12Plus'])
