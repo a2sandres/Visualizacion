@@ -27,11 +27,16 @@ import plotly.graph_objs as go
 import plotly.express as px #libreria para vizualización
 
 #%%%
-db = 'https://media.githubusercontent.com/media/a2sandres/Visualizacion/main/COVID-19_Vaccinations_in_the_United_States_County.csv'
+db = 'https://media.githubusercontent.com/media/a2sandres/Visualizacion/main/muestra.csv'
 #db = 'C:/Users/Andres/Desktop/maestria/S3/VAD/COVID-19_Vaccinations_in_the_United_States_County.csv'
 d_parse = lambda x : datetime.strptime(x, "%m/%d/%Y")
 df = pd.read_csv(db, parse_dates=["Date"], date_parser = d_parse)  #  Leer y guardar el archivo el daataframe row_data
 print(df.head())
+#%%
+
+#df1 = df.sample(n=10000)
+#filename = 'C:/Users/Andres/Desktop/maestria/S3/VAD//muestra.csv'
+#df1.to_csv(filename)
 
 #%%
 #Alivianar DB
