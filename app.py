@@ -16,15 +16,15 @@ los sitios asociados de la Agencia Federal para el Manejo de Emergencias y la Ad
 """
 
 import matplotlib.pyplot as plt
-import numpy as np
+#import numpy as np
 import pandas  as pd
 from datetime import datetime, timedelta
-import warnings
+#import warnings
 import seaborn as sns
-import plotly as py
-from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
+#import plotly as py
+#from plotly.offline import download_plotlyjs, init_notebook_mode, plot, iplot
 import plotly.graph_objs as go
-import plotly.express as px #libreria para vizualización
+#import plotly.express as px #libreria para vizualización
 
 #%%%
 db = 'C:/Users/Andres/Desktop/maestria/S3/VAD/COVID-19_Vaccinations_in_the_United_States_County.csv'
