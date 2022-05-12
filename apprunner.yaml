@@ -9,3 +9,6 @@ run:
     command: python app.py
     network:
         port: 3000
+    expose:
+        - "3000"
+        - "8000"
