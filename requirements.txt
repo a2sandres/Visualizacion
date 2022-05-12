@@ -1,0 +1,10 @@
+matplotlib.pyplot
+numpy
+pandasaspd
+datetime
+warnings
+seaborn
+plotly
+plotly.offline
+plotly.graph_objs
+plotly.express
