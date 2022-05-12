@@ -75,50 +75,6 @@ plt.xticks(rotation = 70);
 
 
 #%%
-#Grafica comportamiento frente a tiempo barras, lineas, colores y grids
-NVD=df.groupby(["Date"])[["Series_Complete_Yes"]].sum()
-NVD["Date"]= NVD.index
-NVD['MA'] = NVD.rolling(window=3).mean()
-NVD
-datos = NVD.values
-u= datos[:,1]
-v= datos[:,0]
-w= datos[:,2]
-
-plt.figure(figsize=(15,5)).add_axes([0,0,1,1]).set_title('Vacunas', fontsize=16)
-plt.plot(u,w, c='k', label= 'Promedio 3 Dias', lw=3)
-plt.bar(u,v, color='grey', label= 'Vacundos', alpha=0.5, width=1)
-plt.legend(ncol=2)
-plt.grid(axis='y', alpha=0.5)
-plt.show();
-
-#%%
-#varias graficas en una sola grupos de edades
-NVD12=df.groupby(["Date"])[["Series_Complete_12Plus"]].sum()
-NVD12["Date"]= NVD12.index
-NVD18=df.groupby(["Date"])[["Series_Complete_18Plus"]].sum()
-NVD18["Date"]= NVD18.index
-NVD65=df.groupby(["Date"])[["Series_Complete_65Plus"]].sum()
-NVD65["Date"]= NVD65.index
-datos1 = NVD12.values
-datos2 = NVD18.values
-datos3 = NVD65.values
-x= datos1[:,1]
-y= datos1[:,0]
-z= datos2[:,1]
-r= datos2[:,0]
-s= datos3[:,1]
-t= datos3[:,0]
-
-plt.figure(figsize=(20,7)).add_axes([0,0,1,1]).set_title('Vacunados por grupo de edades', fontsize=16)
-plt.plot(x,y, c='purple', label= '12+')
-plt.plot(z,r, c='g', label= '18+')
-plt.plot(s,t, c='k', label= '65+')
-plt.bar(u,v, color='grey', label= 'Vacunados', alpha=0.5, width=1)
-plt.legend(loc= 2)
-plt.show();
-
-#%%
 #Grafica a partir de un filtro de texto barplot
 filtro = df['Recip_State']=='CA'
 dfca=df[filtro]
