@@ -54,12 +54,7 @@ df['Series_Complete_65Plus']=pd.to_numeric(df['Series_Complete_18Plus'], downcas
 df['Series_Complete_65PlusPop_Pct']=pd.to_numeric(df['Series_Complete_12PlusPop_Pct'], downcast='float' , errors='coerce')
 df['Completeness_pct']=pd.to_numeric(df['Completeness_pct'], downcast='float', errors='coerce')
 
-#%%
-#(df.describe(include = 'all'))
-'''
-print(df.info())
-print(df.describe())
-'''
+
 #%%
 #Agrupar Datos
 dfg=sns.PairGrid(df, hue="Recip_State", x_vars=['Series_Complete_Pop_Pct', 'Series_Complete_Yes'], y_vars=['Series_Complete_12PlusPop_Pct', 'Series_Complete_12Plus'])
@@ -78,20 +73,6 @@ plt.figure(figsize=(12,5))
 sns.barplot(x="Recip_State",y="Series_Complete_Yes", data=df)
 plt.xticks(rotation = 70);
 
-#%%
-#stripplot
-'''
-plt.figure(figsize=(15,10))
-sns.stripplot(x='Recip_State',y='Series_Complete_Yes', data=df, hue='MMWR_week')
-plt.xticks(rotation = -45);
-'''
-
-#%%
-#correlacion pairplot
-'''
-df1= df[100:200]
-sns.pairplot(df1)
-'''
 
 #%%
 #Grafica comportamiento frente a tiempo barras, lineas, colores y grids
@@ -145,23 +126,3 @@ plt.figure(figsize=(15,5))
 sns.barplot(x='MMWR_week',y='Series_Complete_Yes', data=dfca);
 plt.xticks(rotation = -60);
 
-#%%
-#Datos en un mapa
-'''
-df3=df.groupby(["Recip_State"])[["Series_Complete_Yes"]].sum()
-df3["Recip_State"]= df3.index
-
-data = dict(type = "choropleth",
-            colorscale = "Greens_r",
-            z = df3["Series_Complete_Yes"],
-            locations = df3["Recip_State"],
-            locationmode = "USA-states",
-            text = df3["Recip_State"],           
-            colorbar ={"title":"$"},
-            marker = dict(line = dict(color = "rgb(255,255,255)", width = 1))
-            )
-
-layout = dict(title= "Vacunas Covid 19 USA 2022", geo = {"scope":"usa"})
-choromap = go.Figure(data= [data], layout= layout)
-choromap.show()
-'''
